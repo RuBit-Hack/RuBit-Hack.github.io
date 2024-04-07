@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="nav-buttons">
+        <a href="index.html" class="nav-button">Back</a>
+    </div>
+
+    <div class="card">
+        <h1>News</h1>
+
+        <!-- News container -->
+        <div id="news-container"></div>
+    </div>
+
+    <script>
+        function openTelegram() {
+            window.open("https://RuBitTalkbot.t.me", "_blank");
+        }
+
+        function loadNews() {
+            const newsContainer = document.getElementById("news-container");
+
+            const newsList = JSON.parse(localStorage.getItem("news")) || [];
+
+            if (newsList.length > 0) {
+                newsList.forEach(newsItem => {
+                    const newsCard = document.createElement("div");
+                    newsCard.classList.add("news-card");
+
+                    const newsTitle = document.createElement("h2");
+                    newsTitle.textContent = newsItem.title;
+
+                    const newsText = document.createElement("p");
+                    newsText.textContent = newsItem.text;
+
+                    const newsTimestamp = document.createElement("p");
+                    newsTimestamp.textContent = `Published on ${new Date(newsItem.timestamp).toLocaleString()}`;
+
+                    newsCard.appendChild(newsTitle);
+                    newsCard.appendChild(newsText);
+                    newsCard.appendChild(newsTimestamp);
+
+                    newsContainer.appendChild(newsCard);
+                });
+            } else {
+                const noNewsMessage = document.createElement("p");
+                noNewsMessage.textContent = "No news available.";
+
+                newsContainer.appendChild(noNewsMessage);
+            }
+        }
+
+        window.onload = loadNews;
+    </script>
+</body>
+
+</html>

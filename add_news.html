@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+
+    <div class="card">
+        <h1>Add News</h1>
+
+        <!-- Add News Form -->
+        <form id="add-news-form">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="text">Text:</label>
+            <textarea id="text" name="text" rows="4" required></textarea>
+
+            <button type="submit">Add News</button>
+        </form>
+    </div>
+
+    <script>
+        function openTelegram() {
+            window.open("https://RuBitTalkbot.t.me", "_blank");
+        }
+
+        const addNewsForm = document.getElementById("add-news-form");
+
+        addNewsForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const password = document.getElementById("password").value;
+
+            if (password === "SaintHack") {
+                const title = document.getElementById("title").value;
+                const text = document.getElementById("text").value;
+
+                addNewsToDatabase(title, text);
+
+                window.location.href = "news.html";
+            } else {
+                alert("Incorrect password. News not added.");
+            }
+        });
+
+        function addNewsToDatabase(title, text) {
+            const newsItem = { title, text, timestamp: new Date() };
+
+            const existingNews = JSON.parse(localStorage.getItem("news")) || [];
+
+            existingNews.push(newsItem);
+
+            localStorage.setItem("news", JSON.stringify(existingNews));
+        }
+    </script>
+</body>
+
+</html>

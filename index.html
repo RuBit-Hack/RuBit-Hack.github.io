@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="nav-buttons">
+        <a href="about.html" class="nav-button">About us</a>
+        <a href="#" class="nav-button" onclick="openTelegram()">Join us</a>
+        <a href="https://RuBitTeam.t.me" class="nav-button">News</a>
+    </div>
+    <div class="card">
+        <img src="icon/logo.jpg" alt="Company Logo" class="logo">
+        <h1>RuBit Team</h1>
+        <p>F***ing Security</p>
+
+        <div class="social-icons">
+            <div class="social-column" onclick="openProfile(1)">
+                <img src="icon/1.jpg" alt="Icon 1">
+                <p>Kalashnikov</p>
+            </div>
+            <div class="social-column" onclick="openProfile(2)">
+                <img src="icon/22.jpg" alt="Icon 2">
+                <p>vvv.net</p>
+            </div>
+            <div class="social-column" onclick="openProfile(3)">
+                <img src="icon/8.jpg" alt="Icon 3">
+                <p>Gfao</p>
+            </div>
+            <div class="social-column" onclick="openProfile(4)">
+                <img src="icon/44444444.jpg" alt="Icon 4">
+                <p>Bergman</p>
+            </div>
+            <div class="social-column" onclick="openProfile(5)">
+                <img src="icon/5.jpg" alt="Icon 5">
+                <p>KALIEB</p>
+            </div>
+            
+            <div class="social-column" onclick="openProfile(8)">
+                <img src="icon/88.jpg" alt="Icon 8">
+                <p>TwoFaced/Df</p>
+            </div>
+        </div>
+
+        <div class="social-icons">
+            <a href="mailto:RuBit_Hack@proton.me"><img src="icon/mail.png" alt="Email"></a>
+            <a href="https://RuBitTeam.t.me" target="_blank"><img src="icon/tg.png" alt="Telegram"></a>
+        </div>
+    </div>
+
+    <script>
+        function openTelegram() {
+            window.open("https://codekiller_sayme_bot.t.me", "_blank");
+        }
+
+        function openProfile(id) {
+            window.location.href = `profile/profile${id}.html`;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>Delete All News</h1>
+
+        <!-- Delete News Form -->
+        <form id="delete-news-form">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Delete All News</button>
+        </form>
+    </div>
+
+    <script>
+        function openTelegram() {
+            window.open("https://RuBitTalkbot.t.me", "_blank");
+        }
+
+        const deleteNewsForm = document.getElementById("delete-news-form");
+
+        deleteNewsForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const password = document.getElementById("password").value;
+
+            if (password === "SaintHack") {
+                deleteAllNewsFromDatabase();
+
+                window.location.href = "news.html";
+            } else {
+                alert("Incorrect password. News not deleted.");
+            }
+        });
+
+        function deleteAllNewsFromDatabase() {
+            localStorage.removeItem("news");
+        }
+    </script>
+</body>
+
+</html>
