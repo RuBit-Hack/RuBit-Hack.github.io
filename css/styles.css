@@ -1,0 +1,229 @@
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #000, #000, #FF0000);
+    background-size: 300% 100%;
+    animation: gradientAnimation 5s infinite alternate-reverse;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #fff;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
+
+.card {
+    background-color: #000;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    max-width: 80%;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 150px;
+    height: 130px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.social-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-column:hover {
+    transform: scale(1.1);
+}
+
+.social-icons img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.1);
+}
+
+.social-icons {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+}
+
+.nav-button {
+    margin-left: 15px;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.profile-card {
+    background-color: #000;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    max-width: 80%;
+    width: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.back-button {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.back-button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.card-icon {
+    width: 100px; /* Adjust the width according to your design */
+    height: 100px; /* Adjust the height according to your design */
+    margin-bottom: 10px; /* Add some spacing between the icon and the heading */
+}
+
+@media only screen and (max-width: 440px) {
+    body {
+        font-size: 14px;
+    }
+
+    .card {
+        max-width: 80%;
+        width: 300px;
+        padding: 10px;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        margin-bottom: 8px;
+    }
+
+    p {
+        margin-bottom: 15px;
+    }
+
+    .social-icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .social-column {
+        width: 48%;
+        margin-top: 10px;
+        box-sizing: border-box;
+        padding: 5px;
+    }
+
+    .social-icons img {
+        width: 40px;
+        height: 40px;
+        margin: 0 5px;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        align-items: flex-end;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 2;
+    }
+
+    .nav-button {
+        margin: 5px 0;
+        width: auto;
+    }
+
+    .profile-card {
+        max-width: 80%;
+        width: 300px;
+        padding: 20px;
+        margin: 0 auto;
+    }
+
+    .back-button {
+        width: auto;
+    }
+
+    .profile-avatar {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 15px;
+    }
+
+    .card-icon {
+        width: 80px; /* Adjust the width according to your design */
+        height: 80px; /* Adjust the height according to your design */
+        margin-bottom: 10px; /* Add some spacing between the icon and the heading */
+    }
+}
